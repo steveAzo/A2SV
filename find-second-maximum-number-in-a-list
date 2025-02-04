@@ -1,0 +1,19 @@
+def runnerUp(n, arr):
+    arr = list(arr)
+    first = float('-inf')
+    runner_up = float('-inf')
+    
+    for i in range(n):
+        if arr[i] > first:
+            runner_up = first
+            first = arr[i]
+        if arr[i] < first and arr[i] > runner_up:
+            runner_up = arr[i]
+    
+    return runner_up
+
+
+if __name__ == '__main__':
+    n = int(input())
+    arr = map(int, input().split())
+    print(runnerUp(n, arr))
