@@ -1,0 +1,31 @@
+def orderScores(scires):
+    smallest = float('inf')
+    second_smallest = float('inf')
+    for score in scores:
+        if score[1] < smallest:
+            second_smallest = smallest
+            smallest = score[1]
+        if score[1] > smallest and score[1] < second_smallest:
+            second_smallest = score[1]
+    
+    second_lowest = []
+    for record in scores:
+        if record[1] == second_smallest:
+            second_lowest.append(record[0])
+    second_lowest.sort()
+    for i in second_lowest:
+        print(i)
+        
+
+
+if __name__ == '__main__':
+    
+    scores = []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        scores.append([name, score])
+    
+    orderScores(scores)
+
+        
