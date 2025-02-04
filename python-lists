@@ -1,0 +1,30 @@
+def commands(statements):
+    result = []
+    for statement in statements: 
+        statement = statement.split()
+        if statement[0] == 'append':
+            result.append(int(statement[1]))
+        if statement[0] == 'remove':
+            result.remove(int(statement[1]))
+        if statement[0] == 'print':
+            print(result)
+        if statement[0] == 'sort':
+            result.sort()
+        if statement[0] == 'insert':
+            result.insert(int(statement[1]), int(statement[2]))
+        if statement[0] == 'pop':
+            result.pop()
+        if statement[0] == 'reverse':
+            result.reverse()
+        
+
+if __name__ == '__main__':
+    N = int(input())
+    statements = []
+    for _ in range(N):
+        statement = input()
+        statements.append(statement)
+    commands(statements=statements)
+        
+    
+        
